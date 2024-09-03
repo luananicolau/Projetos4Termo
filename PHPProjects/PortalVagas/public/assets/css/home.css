@@ -1,0 +1,133 @@
+/* Variáveis de cores */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --background-color: #e9ecef;
+  --footer-bg-color: #343a40;
+  --footer-text-color: #fff;
+}
+
+.container {
+  width: 100%;
+}
+
+/* Estilos para o header */
+header {
+  background-color: var(--secondary-color);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.user-options a {
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 5px 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+
+.user-options a.signup {
+  background-color: var(--primary-color);
+  color: var(--footer-text-color);
+}
+
+/* Estilos para a seção de boas-vindas */
+.welcome-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: var(--background-color);
+}
+
+.welcome-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.welcome-section .btn {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--footer-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Estilos para o footer */
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.footer-section a img {
+  width: 24px;
+  margin: 0 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20px;
+}
