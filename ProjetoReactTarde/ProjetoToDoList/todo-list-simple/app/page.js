@@ -1,25 +1,20 @@
 'use client';
 
-
 import { useState, useEffect } from 'react';
-
 
 export default function Home() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
-
   useEffect(() => {
     fetchTodos();
   }, []);
-
 
   const fetchTodos = async () => {
     const response = await fetch('/api/todos');
     const data = await response.json();
     setTodos(data.data);
   };
-
 
   const addTodo = async () => {
     const response = await fetch('/api/todos', {
@@ -34,7 +29,6 @@ export default function Home() {
     setNewTodo('');
   };
 
-
   const deleteTodo = async (id) => {
     await fetch(`/api/todos/${id}`, {
       method: 'DELETE',
@@ -42,6 +36,18 @@ export default function Home() {
     setTodos(todos.filter((todo) => todo._id !== id));
   };
 
+  // PUT - update
+  const updateTodo = async (id, status) => {
+    const response = await fetch(`/api/todos/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ completed: !status }),
+    });
+    const data = await response.json();
+    fetchTodos();
+  };
 
   return (
     <div>
@@ -55,7 +61,12 @@ export default function Home() {
       <ul>
         {todos.map((todo) => (
           <li key={todo._id}>
-            {todo.title}
+            {todo.title} - {todo.completed ? "Concluído" : "Pendente"}
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => updateTodo(todo._id, todo.completed)}
+            />
             <button onClick={() => deleteTodo(todo._id)}>Excluir</button>
           </li>
         ))}
