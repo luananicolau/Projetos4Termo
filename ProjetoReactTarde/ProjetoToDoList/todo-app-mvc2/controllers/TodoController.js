@@ -1,6 +1,6 @@
 import Todo from "@/models/Todo";
 import connectMongo from "@/utils/dbConnect";
-import closeConnectionMongo from "@/utils/dbCloseConnection";
+
 
 //CRUD 
 const getTodos = async()=> {

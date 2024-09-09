@@ -2,7 +2,7 @@
 import { getTodos } from "@/controllers/TodoController";
 import { NextResponse } from "next/server";
 
-//GET 
+//GET ç
 export async function GET(){
  try{
     const todos = await getTodos();
